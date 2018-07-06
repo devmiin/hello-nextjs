@@ -1,17 +1,35 @@
 import React from 'react';
 import '../scss/_layout.scss';
+import movieService from '../services/movie-service';
+import Link from 'next/link';
 
 interface IIndexProps {
-  name: string;
+  shows: any;
 }
 
-export default class extends React.Component<IIndexProps, any> {
+interface IIndexState {
+  active: boolean;
+}
+
+export default class extends React.Component<IIndexProps, IIndexState> {
+  static async getInitialProps() {
+    const res = await movieService.GetShows();
+    const dataProps = await res.data;
+    return { shows: dataProps }
+  }
+
   render() {
-    const { name } = this.props;
+    const { shows } = this.props;
     return (
-      <h1 className="title">Hello Next.js {name}</h1>
+      <div>
+        {
+          shows.map(m => {
+            return <Link href={`/post/${m.show.id}`} key={m.show.id}>
+              <a><h1>{m.show.name}</h1></a>
+            </Link>
+          })
+        }
+      </div>
     )
   }
 }
-
-

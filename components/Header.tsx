@@ -4,7 +4,7 @@ const linkStyle = {
   marginRight: 15
 }
 
-const Header = () => (
+export default () => (
   <div>
     <Link href="/">
       <a style={linkStyle}>Home</a>
@@ -14,5 +14,3 @@ const Header = () => (
     </Link>
   </div>
 )
-
-export default Header
