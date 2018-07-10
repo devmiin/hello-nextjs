@@ -1,18 +1,15 @@
-import Header from './Header'
-import Footer from './Footer';
-
+import React from 'react';
+import { Header, Footer } from '.'
 const layoutStyle = {
   margin: 20,
   padding: 20,
   border: '1px solid #DDD'
 }
 
-const Layout = (props) => (
+export default (props) => (
   <div style={layoutStyle}>
     <Header />
-    {props.children}
+      {props.children}
     <Footer />
   </div>
 )
-
-export default Layout

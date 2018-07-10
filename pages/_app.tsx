@@ -1,6 +1,6 @@
 import App, { Container } from 'next/app'
 import React from 'react';
-import Layout from './../components/MyLayout';
+import { Layout } from './../components/layout';
 
 export default class MyApp extends App<any> {
   static async getInitialProps({ Component, ctx }) {

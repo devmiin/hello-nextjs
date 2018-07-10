@@ -3,15 +3,15 @@ import '../scss/_layout.scss';
 import movieService from '../services/movie-service';
 import Link from 'next/link';
 
-interface IIndexProps {
+interface IProps {
   shows: any;
 }
 
-interface IIndexState {
+interface IState {
   active: boolean;
 }
 
-export default class extends React.Component<IIndexProps, IIndexState> {
+export default class extends React.Component<IProps, IState> {
   static async getInitialProps() {
     const res = await movieService.GetShows();
     const dataProps = await res.data;
