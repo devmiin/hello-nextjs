@@ -6,7 +6,7 @@ import { initStore } from '../store/store'
 
 import { Layout } from './../components/layout';
 
-export default withRedux(initStore)(class MyApp extends App {
+export default withRedux(initStore)(class MyApp extends App<any> {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {}
 
