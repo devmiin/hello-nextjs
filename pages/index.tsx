@@ -22,8 +22,8 @@ class IndexPage extends React.Component<any, any> {
 
   // ถ้าทำการคลิ๊กเราจะทำการอัพเดท user store 
   handleClick() {
-    const { dispatchUser } = this.props;
-    dispatchUser('Update user...')
+    const { updateUser } = this.props;
+    updateUser('Update user...')
     console.log(this.props);
   }
 
@@ -56,8 +56,8 @@ const mapStateToProps = (state) => ({
 
 // คือการ map dispatch ไปยัง props
 const mapDispatchToProps = (dispatch) => ({
-  dispatchUser: bindActionCreators(updateUser, dispatch), // this.props.dispactchUser
-  dispatchAbout: bindActionCreators(updateAbout, dispatch) // this.props.dispatchAbout
+  updateUser: bindActionCreators(updateUser, dispatch), // this.props.updateUser
+  updateAbout: bindActionCreators(updateAbout, dispatch) // this.props.updateAbout
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
