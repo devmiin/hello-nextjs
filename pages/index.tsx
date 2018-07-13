@@ -20,7 +20,6 @@ class IndexPage extends React.Component<any, any> {
     return { shows: dataProps }
   }
 
-  // ถ้าทำการคลิ๊กเราจะทำการอัพเดท user store 
   handleClick() {
     const { updateUser } = this.props;
     updateUser('Update user...')
@@ -33,6 +32,7 @@ class IndexPage extends React.Component<any, any> {
     return (
       <div>
         {userMessage}
+        <p>Hello world!</p>
         <button onClick={this.handleClick}>Click me!</button>
 
         {
@@ -47,14 +47,11 @@ class IndexPage extends React.Component<any, any> {
   }
 }
 
-// คือการ map state (in file store.tsx) ไปยัง props
 const mapStateToProps = (state) => ({
-  // state.user มาจากไพล์ store.tsx // .message มาจาก interface IUser 
   userMessage: state.user.message, // this.props.userMessage
   aboutName: state.about.name, // this.props.aboutName
 })
 
-// คือการ map dispatch ไปยัง props
 const mapDispatchToProps = (dispatch) => ({
   updateUser: bindActionCreators(updateUser, dispatch), // this.props.updateUser
   updateAbout: bindActionCreators(updateAbout, dispatch) // this.props.updateAbout
