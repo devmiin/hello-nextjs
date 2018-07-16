@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateUser } from '../store/user/user.action';
@@ -36,11 +36,14 @@ class IndexPage extends React.Component<any, any> {
         <button onClick={this.handleClick}>Click me!</button>
 
         {
-          shows.map(m => {
-            return <Link href={`/post/${m.show.id}`} key={m.show.id}>
+          shows ? shows.map(m => {
+            return <Link
+              href={`/post/${m.show.id}`}
+              key={m.show.id}>
               <a><h1>{m.show.name}</h1></a>
             </Link>
           })
+            : ''
         }
       </div>
     )

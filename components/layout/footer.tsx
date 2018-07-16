@@ -1,5 +1,7 @@
-import React from 'react';
+import * as React from 'react'
 
 export default () => {
-    return <div>My Footer</div>
+    return (
+      <div>My Footer</div>
+    )
   };
