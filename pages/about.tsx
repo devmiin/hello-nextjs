@@ -12,6 +12,13 @@ export default class extends React.Component<any, IState> {
       on: false,
       input: ''
     }
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(e) {
+    // e.preventdefault();
+    this.setState({input: e.target.value})
   }
 
   render() {
@@ -26,7 +33,7 @@ export default class extends React.Component<any, IState> {
 
           <h3>{input}</h3>
           <input 
-            onChange={(e) => this.setState({input: e.target.value})} 
+            onChange={this.handleClick} 
             type='text' 
           />
       </div>

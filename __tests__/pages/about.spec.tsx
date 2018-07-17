@@ -21,5 +21,17 @@ describe('Pages', () => {
       input.simulate('change', {target: {value: 'Tyler'}})
       expect(wrapper.find('h3').text()).toBe('Tyler')
     })
+
+    it.skip('spyOn click function', () => {
+      const wrapper = mount(<AboutPage />)
+      const button = wrapper.find('button')
+
+      const spy = jest.spyOn(AboutPage.prototype, 'handleClick')
+
+      button.simulate('click')
+
+      expect(spy).toHaveBeenCalled()
+      spy.mockRestore()
+    })
   })
 })
