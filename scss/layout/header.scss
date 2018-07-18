@@ -1,0 +1,28 @@
+#header {
+  .nav {
+    &__logo {
+      padding: 0;
+    }
+
+    &__links {
+      &--right {
+        padding: 0;
+      }
+
+      padding: 0;
+
+      &__item {
+        padding: 0;
+      }
+
+      &__icon {
+        padding: 0;
+      }
+    }
+  }
+}
+
+/*
+  .block__element--modifier > .post__btn--disabled
+  .block--modifier > .post--important
+*/

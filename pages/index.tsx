@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { updateUser } from '../store/user/user.action';
 import { updateAbout } from '../store/about/about.action'
 
-import '../scss/_layout.scss';
 import MovieService from '../services/movie-service';
 import Link from 'next/link';
 
