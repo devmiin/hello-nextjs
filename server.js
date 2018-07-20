@@ -10,7 +10,7 @@ app.prepare()
   .then(() => {
     const server = express()
     
-    server.use(handler).listen(3000, (err) => {
+    server.use(handler).listen(3001, (err) => {
       if (err) throw err
       console.log('> Ready on http://localhost:3001')
     });

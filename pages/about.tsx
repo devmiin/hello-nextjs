@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-interface IState {
+interface IAboutState {
   on: boolean
   input: string
 }
 
-export default class extends React.Component<any, IState> {
+export default class extends React.Component<any, IAboutState> {
   constructor(props) {
     super(props);
     this.state = {

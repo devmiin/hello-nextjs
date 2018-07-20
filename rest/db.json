@@ -3,12 +3,16 @@
     { 
       "id": 1, 
       "name": "Smith",
-      "email": "test1@test.com"
+      "email": "test1@test.com",
+      "password": "1234",
+      "jwt": ""
     },
     { 
       "id": 2, 
       "name": "Jonh",
-      "email": "test2@test.com"
+      "email": "test2@test.com",
+      "password": "1234",
+      "jwt": ""
     }
   ]
 }
