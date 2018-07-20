@@ -6,7 +6,9 @@ export default class extends React.Component {
     return (
       <div>
         <Header />
-        {this.props}
+        <div className="main-container">
+          {this.props.children}
+        </div>
         <Footer />
       </div>
     )

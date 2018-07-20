@@ -1,0 +1,11 @@
+.home-page {
+  .movies {
+    &__link {
+      color: $back-color;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}

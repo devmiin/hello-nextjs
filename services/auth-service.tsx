@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const authenticate = (email, password) => {
+const login = (email, password) => {
   const endpoint = 'http://localhost:3000/';
   return axios.get(endpoint, {
     params: {
@@ -11,5 +11,5 @@ const authenticate = (email, password) => {
 }
 
 export default {
-  authenticate,
+  login,
 }

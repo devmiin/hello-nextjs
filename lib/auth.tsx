@@ -22,9 +22,17 @@ const redirectIfNotAuthenticated = ctx => {
   return false;
 };
 
+const logout = (ctx = {}) => {
+  if (process.browser) {
+    Session.removeCookie('jwt');
+    Redirect('/login', ctx);
+  }
+};
+
 export default {
   getJwt,
   isAuthenticated,
   redirectIfAuthenticated,
   redirectIfNotAuthenticated,
+  logout,
 }

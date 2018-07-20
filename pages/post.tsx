@@ -1,5 +1,7 @@
 import React from 'react';
+
 import MovieService from '../services/movie-service';
+import { AppLayout } from '../components/layout';
 
 interface IPostProps {
   post: any;
@@ -8,7 +10,7 @@ interface IPostProps {
 export default class extends React.Component<IPostProps, any> {
   static async getInitialProps({ query }) {
     const { id } = query;
-    const res = await MovieService.GetShowById(id);
+    const res = await MovieService.getShowById(id);
     const data = await res.data;
     return { post: data }
   }
@@ -16,11 +18,11 @@ export default class extends React.Component<IPostProps, any> {
   render() {
     const { post } = this.props;
     return (
-      <div>
+      <AppLayout>
         <img src={post.image.medium} alt=""/>
         <h1>{ post.name }</h1>
         <p>{ post.summary }</p>
-      </div>
+      </AppLayout>
     )
   }
 }

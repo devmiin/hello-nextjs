@@ -1,25 +1,32 @@
 #header {
-  .nav {
-    &__logo {
+  .nav-top {
+    .menu {
+      list-style-type: none;
+      margin: 0;
       padding: 0;
-    }
-
-    &__links {
-      &--right {
-        padding: 0;
-      }
-
-      padding: 0;
+      overflow: hidden;
+      background-color: $back-light-color;
 
       &__item {
-        padding: 0;
+        float: left;
+
+        &:hover {
+          background-color: $back-color;
+        }
       }
 
-      &__icon {
-        padding: 0;
+      &__link {
+        display: block;
+        color: $white-color;
+        text-align: center;
+        padding: 14px 30px;
       }
     }
   }
+}
+
+.main-container {
+  padding: 30px;
 }
 
 /*

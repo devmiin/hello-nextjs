@@ -1,22 +1,25 @@
 import React from 'react';
 import Link from 'next/link'
 
-const linkStyle = {
-  marginRight: 15
+const MenuItem = ({url, name}) => {
+  return (
+    <li className="menu__item">
+      <Link href={url}>
+        <a className="menu__link">{name}</a>
+      </Link>
+    </li>
+  )
 }
 
 export default () => {
   return (
-    <div>
-      <Link href="/">
-        <a style={linkStyle}>Home</a>
-      </Link>
-      <Link href="/about">
-        <a style={linkStyle}>About</a>
-      </Link>
-      <Link href="/login">
-        <a style={linkStyle}></a>
-      </Link>
-    </div>
+    <header id="header">
+      <nav className="nav-top">
+        <ul className="menu">
+          <MenuItem url="/" name="Home" />
+          <MenuItem url="/about" name="About" />
+        </ul>
+      </nav>
+    </header>
   )
 }

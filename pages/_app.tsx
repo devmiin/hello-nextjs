@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import withRedux from 'next-redux-wrapper';
 
 import { initStore } from '../store/store'
+import '../scss/styles.scss'
 
 export default withRedux(initStore)(class MyApp extends App<any> {
   static async getInitialProps({ Component, ctx }) {

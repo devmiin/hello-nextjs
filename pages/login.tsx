@@ -1,8 +1,9 @@
 import React from 'react'
-import Link from "next/link";
+// import Link from "next/link";
 
 import { Auth, Session, Redirect } from '../lib'
 import { AuthService } from '../services';
+import { AppLayout } from '../components/layout'
 
 interface ILoginState {
   error: string;
@@ -32,7 +33,7 @@ export default class extends React.Component<any, ILoginState> {
 
   render() {
     return(
-      <div>        
+      <AppLayout>        
         <form onSubmit={this.handleSubmit}>
           <h1>Login</h1>
           <input type="email" placeholder="email" name="email" />
@@ -40,32 +41,13 @@ export default class extends React.Component<any, ILoginState> {
           <button type="submit">Submit</button>
         </form>
 
-        <p>
+        {/* <p>
           {"Don't have a user? "}
           <Link prefetch href="/register">
             <a>Register</a>
           </Link>
-        </p>
-        <style jsx>{`
-          form {
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-          }
-          p {
-            text-align: center;
-          }
-          h1 {
-            font-size: 20px;
-          }
-          input,
-          button {
-            display: block;
-            margin: auto;
-            margin-bottom: 10px;
-          }
-        `}</style>
-      </div>
+        </p> */}
+      </AppLayout>
     )
   }
 
@@ -75,7 +57,7 @@ export default class extends React.Component<any, ILoginState> {
     const email = e.target.elements.email.value;
     const password = e.target.elements.password.value;
 
-    AuthService.authenticate(email, password)
+    AuthService.login(email, password)
     .then(res => {
       if (res.data) {
         Session.setCookie('jwt', res.data.jwt)
