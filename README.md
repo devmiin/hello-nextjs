@@ -7,7 +7,7 @@ Next.js + Typescript + Next Redux + Sass
 ## Development server
 ```npm run dev```
 
-Then navigate to ```localhost:3000```.
+Then navigate to ```localhost:3001```.
 
 ## Running unit tests
 ``` npm run test ```

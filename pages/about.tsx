@@ -17,7 +17,7 @@ export default class extends React.Component<any, IState> {
   }
 
   handleClick(e) {
-    // e.preventdefault();
+    // e.preventDefault()
     this.setState({input: e.target.value})
   }
 
