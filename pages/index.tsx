@@ -31,10 +31,21 @@ class IndexPage extends React.Component<IHomeProps, any> {
     const { updateUser } = this.props
     updateUser('Update user...')
     console.log(this.props)
+
+    // Passing setState a Function
+    // this.setState({ expanded: !this.state.expanded }) chang to below
+    // this.setState(prevState => ({ expanded: !prevState.expanded }))
   }
 
   render() {
-    // const { shows, userMessage } = this.props
+    /*
+    * Components with many props should have each prop on a newline
+    const { 
+      shows, 
+      userMessage 
+    } = this.props
+    */
+
     const { shows } = this.props
 
     return (
@@ -58,6 +69,16 @@ class IndexPage extends React.Component<IHomeProps, any> {
               : ''
           }
         </div>
+        {
+          // on one condition
+          // isTrue
+          // ? <p>True!</p>
+          // : <none/>
+
+          // or
+          // isTrue &&
+          // <p>True!</p>
+        }
       </AppLayout>
     )
   }

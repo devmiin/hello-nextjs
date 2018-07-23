@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
+    "start": "NODE_ENV=production next start",
     "build": "NODE_ENV=production next build",
     "export": "next export",
     "test": "NODE_ENV=test jest",
