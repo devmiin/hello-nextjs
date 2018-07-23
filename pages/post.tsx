@@ -21,7 +21,7 @@ export default class extends React.Component<IPostProps, any> {
       <AppLayout>
         <img src={post.image.medium} alt=""/>
         <h1>{ post.name }</h1>
-        <p>{ post.summary }</p>
+        <div dangerouslySetInnerHTML={{ __html: post.summary }}></div>
       </AppLayout>
     )
   }
