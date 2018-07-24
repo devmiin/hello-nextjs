@@ -1,0 +1,61 @@
+$viewport-m: 480px;
+$viewport-xm: 540px;
+$viewport-xxm: 768px;
+$viewport-xxxm: 992px;
+$viewport-l: 1024px;
+$viewport-xl: 1280px;
+$viewport-datatable-min: 1134px;
+$viewport-datatable: 1600px;
+
+@mixin breakpoint($name) {
+    @if ($name==landscape) {
+        @media screen and (min-aspect-ratio: 13/9) and (max-width: 904px) {
+            @content;
+        }
+    }
+    @else if ($name==mobile) {
+        @media (max-width: $viewport-xxm - 1) {
+            @content;
+        }
+    }
+    @else if ($name==m) {
+        @media (min-width: $viewport-m) {
+            @content;
+        }
+    }
+    @else if ($name==xm) {
+        @media (min-width: $viewport-xm) {
+            @content;
+        }
+    }
+    @else if ($name==xxm) {
+        @media (min-width: $viewport-xxm) {
+            @content;
+        }
+    }
+    @else if ($name==xxxm) {
+        @media (min-width: $viewport-xxxm) {
+            @content;
+        }
+    }
+    @else if ($name==l) {
+        @media (min-width: $viewport-l) {
+            @content;
+        }
+    }
+    @else if ($name==xl) {
+        @media (min-width: $viewport-xl) {
+            @content;
+        }
+    }
+    @else if ($name==dt) {
+        @media (min-width: $viewport-datatable-min) and (max-width: $viewport-datatable) {
+            @content;
+        }
+    }
+    @else if ($name==dttb) {
+        @media (min-width: $viewport-datatable) {
+            @content;
+        }
+    }
+}

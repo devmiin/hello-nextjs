@@ -69,6 +69,8 @@ class IndexPage extends React.Component<IHomeProps, any> {
               : ''
           }
         </div>
+
+        <div className="animation">Animation</div>
         {
           // on one condition
           // isTrue
