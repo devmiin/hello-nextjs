@@ -125,7 +125,7 @@ export default class extends React.Component<IButtonProps, any> {
 
       // Simple way to clean up if the last particle is done animating
       if (i === this.particles.length - 1) {
-        let percent = (Date.now() - this.particles[i].startTime) / this.particles.animationDuration;
+        let percent = (Date.now() - this.particles[i].startTime) / this.particles[i].animationDuration;
 
         if (percent > 1) {
           this.particles = [];

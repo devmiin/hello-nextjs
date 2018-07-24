@@ -1,5 +1,9 @@
 @import '../../node_modules/normalize.css/normalize';
 
+body {
+  font-family: $font-base;
+}
+
 a {
   text-decoration: none;
 }
