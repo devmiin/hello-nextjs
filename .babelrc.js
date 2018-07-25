@@ -6,6 +6,6 @@ module.exports = {
         '@zeit/next-typescript/babel'
     ],
     plugins: [
-        ['transform-define', env]
+        ['transform-define', env]        
     ],
 };
