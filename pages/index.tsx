@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Link from 'next/link';
 
+import Bounce from 'react-reveal/Bounce';
+import Stepper from "react-reveal/Stepper";
+
 import { updateUser } from '../store/user/user.action';
 import { updateAbout } from '../store/about/about.action'
 
@@ -14,10 +17,23 @@ interface IHomeProps {
   updateUser: any;
 }
 
-class IndexPage extends React.Component<IHomeProps, any> {
+interface IHomeState {
+  step: any;
+}
+
+class IndexPage extends React.Component<IHomeProps, IHomeState> {
   constructor(props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
+    const step = new Stepper()
+      .step('element1', 100)
+      .step('element2', 1000)
+      .step('element3', 800)
+      .step('element4', 600)
+      .step('element5', 1500)
+      .step('content', 200);
+
+    this.state = { step: step };
   }
 
   static async getInitialProps() {
@@ -51,23 +67,27 @@ class IndexPage extends React.Component<IHomeProps, any> {
     return (
       <AppLayout>
         <div className="home-page">
-          {
-            shows ? shows.map(m => {
-              return (
-                <div
-                  className="movies__item"
-                  key={m.show.id}>
-                  <Link
-                    href={`/post/${m.show.id}`}>
-                    <a className="movies__link">
-                      <h4>{m.show.name}</h4>
-                    </a>
-                  </Link>
-                </div>
-              )
-            })
-              : ''
-          }
+          <Bounce bottom cascade>
+            <div>
+              {
+                shows ? shows.map(m => {
+                  return (
+                    <div
+                      className="movies__item"
+                      key={m.show.id}>
+                      <Link
+                        href={`/post/${m.show.id}`}>
+                        <a className="movies__link">
+                          <h4>{m.show.name}</h4>
+                        </a>
+                      </Link>
+                    </div>
+                  )
+                })
+                  : ''
+              }
+            </div>
+          </Bounce>
         </div>
 
         <div className="animation">Animation</div>
